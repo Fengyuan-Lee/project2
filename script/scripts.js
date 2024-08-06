@@ -55,6 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 newContent.className = 'blog-item-content';
                 newContent.innerHTML = item.description;
                 newBlogItem.appendChild(newContent);
+                var newReviewCount = document.createElement('div');
+                newReviewCount.className = 'blog-item-review_count';
+                newReviewCount.innerHTML = `Reading quantity:${item.reviewCount}`;
+                newBlogItem.appendChild(newReviewCount);
                 newTitle.addEventListener('click', function () {
                     window.location.href = './blog-desc.html?title=' + item.title;
                 });
