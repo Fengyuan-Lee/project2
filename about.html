@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <style>
+        .skill-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar span {
+            width: 150px;
+            margin-right: 10px;
+        }
+
+        .skill-bar .progress {
+            flex-grow: 1;
+            height: 8px;
+        }
+
+        #pdf-preview {
+            width: 100%;
+            height: 500px;
+        }
+
+        h3 {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body class="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="color-change">
+                <label class="bui-switch-label bui-switch-animbg">
+                    <input id="changeImageUrl" type="checkbox" name="theme" />
+                    <div class="bui-switch">
+                        <span class="ms-4"> dark </span>
+                        <span class="ms-4"> light </span>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <main class="container my-5">
+        <section class="row">
+            <div class="col-md-5">
+                <img class="img-fluid" src="./img/3ce4b6c71864545b49ce3142a7a32a7.jpg" alt="">
+            </div>
+            <div class="col-md-7">
+                <h2>About me</h2>
+                <h3>1. education：</h3>
+                <ul>
+                    <li>
+                        High school: KIEEI international school (Taiwan)
+                    </li>
+                    <li>
+                        University: York university - Information Technology (Canada)
+
+                    </li>
+                </ul>
+
+                <h3>2. skills</h3>
+                <div class="skill-bar">
+                    <span>HTML</span>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <span>CSS</span>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <span>Python</span>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <span>JAVA</span>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <span>Matlab </span>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <h3>3. interest</h3>
+                <ol>
+                    <li>coding</li>
+                    <li>Baseball</li>
+                    <li>Business</li>
+                </ol>
+
+
+            </div>
+        </section>
+        <iframe id="pdf-preview" style="margin: 20px;height: 500px;" src="./Fengyuan Lee_Personal resume.pdf"
+            width="100%" height="800" frameborder="0"></iframe>
+
+        <div class="d-flex">
+            <a href="./Fengyuan Lee_Personal resume.pdf" download="resume" class="btn btn-outline-primary mx-2">
+                download file
+            </a>
+        </div>
+    </main>
+    <footer class="bg-dark text-center py-3">
+        <p>© 2024 All rights reserved</p>
+    </footer>
+
+    <!-- Modal for PDF Preview -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfModalLabel">PDF 预览</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="pdf-preview" src="./Fengyuan Lee_Personal resume.pdf" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="./script/scripts.js"></script>
+</body>
+
+</html>
