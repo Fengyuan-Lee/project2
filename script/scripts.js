@@ -58,11 +58,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 var newReviewCount = document.createElement('div');
                 newReviewCount.className = 'blog-item-review_count';
                 newReviewCount.innerHTML = `Reading quantity:${item.reviewCount}`;
+                var newButton = document.createElement("button")
+                newButton.className = "btn btn-link";
+                newButton.innerHTML = "Click on the numbers to view more";
+                newReviewCount.appendChild(newButton)
+
                 newBlogItem.appendChild(newReviewCount);
                 newTitle.addEventListener('click', function () {
                     window.location.href = './blog-desc.html?title=' + item.title;
                 });
                 newContent.addEventListener('click', function () {
+                    window.location.href = './blog-desc.html?title=' + item.title;
+                });
+                newButton.addEventListener('click', function () {
                     window.location.href = './blog-desc.html?title=' + item.title;
                 });
                 blogList.appendChild(newBlogItem);
